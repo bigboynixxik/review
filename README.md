@@ -50,7 +50,7 @@
 - Выделил интерфейс для фонового воркера экспираций (`internal/service/worker/interfaces.go`).
 - Реализовал `CalculateETA` (`internal/service/membership.go`) — позиция пользователя в очереди и прогноз времени ожидания на основе метрик Redis и параметра `AvgPaymentTime` из конфигурации.
 - Описал контракты репозиториев и сервисов (`internal/service/interfaces.go`, `internal/transport/interfaces.go`).
-- Покрыл бизнес-логику unit-тестами с `gomock` и `testify`-сьютами: `join_queue_test.go`, `accept_offer_test.go`, `decline_offer_test.go`, `advance_queue_test.go`, `validate_right_test.go`, `process_payment_test.go`, `process_expirations_test.go`, `membership_test.go`.
+- Покрыл бизнес-логику unit-тестами с `gomock` и `testify`-сьютами: `queue_service_test`, `join_queue_test.go`, `accept_offer_test.go`, `decline_offer_test.go`, `advance_queue_test.go`, `validate_right_test.go`, `process_payment_test.go`, `process_expirations_test.go`, `membership_test.go`.
 
 ### Остальное влияние на проект
 
