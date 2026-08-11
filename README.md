@@ -9,6 +9,7 @@
 - Описал контекст проекта, бизнес-цели и user stories (`README.md`, `docs/requirements.md`).
 - Составил бизнес-, пользовательские, функциональные и нефункциональные требования (`docs/requirements.md`).
 - Нарисовал C4-диаграммы уровня Context и Container (`docs/c4_context.md`, `docs/c4_container.md`).
+- Описал работу redis и postgres в проекте (`docs/storage/redis.md`,`docs/storage/redis.md`)
 
 ### Каркас проекта и инфраструктура сборки
 
@@ -27,7 +28,7 @@
 ### Слой данных
 
 - Спроектировал схему БД и написал первую миграцию (`internal/migrations/001_init_schema.sql`): таблицы `rights`, `queue_memberships`, `product_stock`, ENUM-типы статусов, индексы и ограничения целостности.
-- Описал доменные модели и типизированные ошибки (`internal/models`): `Right`, `QueueMembership`, `ProductStock`, `Status`; покрыл статусы тестами.
+- Описал доменные модели и типизированные ошибки (`internal/models`): `Right`, `QueueMembership`, `ProductStock`, `Status`, `errors; покрыл статусы тестами.
 - Реализовал Postgres-репозиторий (`internal/repository/postgres/durable.go`): сохранение прав, upsert членства в очереди, транзакционное списание остатка вместе с погашением права. Покрыл интеграционными тестами на `testcontainers`.
 - Реализовал Redis-репозиторий как горячий путь с защитой от гонок через атомарные Lua-скрипты (`internal/repository/redis/cache.go`):
     - `TryAllocate` / `CommitPurchase` / `InitStock` — атомарная работа с остатком товара
@@ -55,3 +56,4 @@
 
 - Добавил логирование ошибок в общий хелпер ответов транспортного слоя (`internal/transport/api/response.go`).
 - Вёл репозиторий как владелец: ревью и приём пул-реквестов команды в `develop`.
+- Активное обсуждение архитектуры и дополнительного функционала
