@@ -10,6 +10,7 @@
 - Составил бизнес-, пользовательские, функциональные и нефункциональные требования (`docs/requirements.md`). ([Commit](https://github.com/bigboynixxik/team-10-queue-serivce/commit/d1807dc48565567d64c530775e23d26055f64cf0))
 - Нарисовал C4-диаграммы уровня Context и Container (`docs/c4_context.md`, `docs/c4_container.md`). ([Context](https://github.com/bigboynixxik/team-10-queue-serivce/commit/746c26f634bffbeb41912740a2ce87384f1deaf9), [Container](https://github.com/bigboynixxik/team-10-queue-serivce/commit/8e6d6657c3baf0d0796f2abda8303134073f58c0))
 - Описал работу redis и postgres в проекте (`docs/storage/redis.md`, `docs/storage/postgres.md`)
+- Описал метрики продавцов, котоыре собираются с помощью продавца: какие, зачем и как их собирать. Добавил эндпоинт в api.yaml (`docs/product_metrics.md`, `docs/api.yml`) [PR](https://github.com/bigboynixxik/team-10-queue-serivce/pull/23)
 
 ### Каркас проекта и инфраструктура сборки
 
@@ -54,6 +55,8 @@
 - Покрыл бизнес-логику unit-тестами с `go.uber.org/mock` и `testify`-сьютами: `queue_service_test`, `join_queue_test.go`, `accept_offer_test.go`, `decline_offer_test.go`, `advance_queue_test.go`, `validate_right_test.go`, `process_payment_test.go`, `process_expirations_test.go`, `membership_test.go`. ([Commit](https://github.com/bigboynixxik/team-10-queue-serivce/commit/86f312bc4589e440fed3455e8793c82abf76fb38), [Commit](https://github.com/bigboynixxik/team-10-queue-serivce/commit/0ecbc9ec51e8dec006e702cf500346495aa33b4c), [Commit](https://github.com/bigboynixxik/team-10-queue-serivce/commit/272c8ec2d07d1da1084fb63dc5fb92cff7428ec6), [Commit](https://github.com/bigboynixxik/team-10-queue-serivce/commit/a32128b4b6eb32c951ef4b48945c145e2020e8ee))
 
 ### Остальное влияние на проект
+
+- Добавил сбор метрик для продавца ([PR](https://github.com/bigboynixxik/team-10-queue-serivce/pull/25))
 
 - Добавил логирование ошибок в общий хелпер ответов транспортного слоя (`internal/transport/api/response.go`). ([Commit](https://github.com/bigboynixxik/team-10-queue-serivce/commit/e745667ad0b6f6cf7b56338c839cdb51acb13f64))
 - Вёл репозиторий как владелец: ревью и приём пул-реквестов команды в `develop`. ([PR #9](https://github.com/bigboynixxik/team-10-queue-serivce/pull/9), [PR #10](https://github.com/bigboynixxik/team-10-queue-serivce/pull/10) и остальные PR)
